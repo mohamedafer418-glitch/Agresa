@@ -81,7 +81,7 @@ input{font:800 18px Nunito,Arial,sans-serif;width:100%;max-width:280px;padding:1
 <script>
 /* Paste your Firebase Realtime Database URL below (no trailing slash) to share names and scores between all players
    and keep names unique. Example: 'https://agresa-game-default-rtdb.firebaseio.com'. Leave '' to work on each device only. */
-const CONFIG={db:'',seconds:45,maxTime:60};
+const CONFIG={db:'https://agresa-game-48c99-default-rtdb.europe-west1.firebasedatabase.app',seconds:45,maxTime:60};
 const TIERS=['Seed','Sprout','Young Plant','Root Master'];
 const $=id=>document.getElementById(id),app=$('app'),cv=$('cv'),ctx=cv.getContext('2d');
 let W,H,u,dpr,st='menu',score=0,lives=3,time=CONFIG.seconds,played=0,lvl=1,items=[],pops=[],px=0,tx=0,last=0,sp=0,shake=0,tt=0,potW,basePot,potY,saved=false,lastRec=null;
