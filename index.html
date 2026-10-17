@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <title>AGRESA — Grow Your Roots</title>
+<meta name="theme-color" content="#06210f"><meta name="apple-mobile-web-app-title" content="AGRESA">
+<link rel="icon" type="image/png" sizes="512x512" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#e6c36a;--cream:#f3f0dd}
@@ -118,9 +120,11 @@ const play=()=>prof?start():show('reg');
 $('go').onclick=play;$('again').onclick=play;$('again2').onclick=play;$('lb').onclick=showBoard;$('lb2').onclick=showBoard;$('cont').onclick=reg;$('back').onclick=home;
 $('switch').onclick=()=>{if(confirm('Switch player? The stats saved on this phone will be cleared.')){prof=null;try{localStorage.removeItem('agresa-profile')}catch(e){}home()}};
 $('nm').addEventListener('keydown',e=>{if(e.key==='Enter')reg()});
-function add(force){const r=Math.random(),w=Math.min(.45,.2+(lvl-1)*.03);let k;if(force)k=force;else k=r<w?'weed':r<w+.05?'clock':r<w+.11?'sun':Math.random()<.6?'seed':'water';
-const sm=Math.min(2.4,1+(lvl-1)*.12),x0=(20+Math.random()*(W/u-40))*u;items.push({k,x0,x:x0,y:-20*u,vy:(120+Math.random()*40)*u*sm,r:13*u,a:Math.random()*6,sw:(k==='weed'&&lvl>=3)?(14+Math.random()*16)*u:0})}
-function update(dt){tt+=dt;played+=dt;time-=dt;const nl=1+Math.floor(played/12);if(nl!==lvl){lvl=nl;potW=basePot*(lvl>=5?.88:1);$('lvl').textContent='LEVEL '+lvl;banner()}
+let cside=1;
+function add(force,cx){const r=Math.random(),w=Math.min(.45,.2+(lvl-1)*.03);let k;if(force)k=force;else k=r<w?'weed':r<w+.06?'sun':Math.random()<.6?'seed':'water';
+const sm=Math.min(2.4,1+(lvl-1)*.12),x0=cx!==undefined?cx:(20+Math.random()*(W/u-40))*u;items.push({k,x0,x:x0,y:-20*u,vy:(k==='clock'?140:120+Math.random()*40)*u*sm,r:13*u,a:Math.random()*6,sw:(k==='weed'&&lvl>=3)?(14+Math.random()*16)*u:0})}
+function clockDrop(){cside=-cside;add('clock',Math.max(24*u,Math.min(W-24*u,px+cside*W*.28)))}
+function update(dt){tt+=dt;played+=dt;time-=dt;const nl=1+Math.floor(played/12);if(nl!==lvl){lvl=nl;potW=basePot*(lvl>=5?.88:1);$('lvl').textContent='LEVEL '+lvl;banner();clockDrop()}
 px+=(tx-px)*Math.min(1,dt*14);px=Math.max(potW/2,Math.min(W-potW/2,px));
 sp-=dt;if(sp<=0){sp=Math.max(.26,.8-(lvl-1)*.07);add();if(lvl>=4&&Math.random()<.25)add('weed')}
 for(const it of items){it.y+=it.vy*dt;it.a+=dt*2;if(it.sw)it.x=it.x0+Math.sin(it.a*1.4)*it.sw;
@@ -141,7 +145,7 @@ function item(it){ctx.save();ctx.translate(it.x,it.y);const r=it.r;
 if(it.k==='seed'){ctx.rotate(it.a);ctx.fillStyle='#e6c36a';ctx.beginPath();ctx.ellipse(0,0,r*.65,r,0,0,7);ctx.fill();ctx.strokeStyle='#8a6a12';ctx.lineWidth=2*u;ctx.beginPath();ctx.moveTo(0,-r*.8);ctx.lineTo(0,r*.8);ctx.stroke()}
 else if(it.k==='water'){ctx.fillStyle='#5ac8fa';ctx.beginPath();ctx.moveTo(0,-r*1.5);ctx.quadraticCurveTo(r*1.1,0,0,r);ctx.quadraticCurveTo(-r*1.1,0,0,-r*1.5);ctx.fill()}
 else if(it.k==='sun'){ctx.strokeStyle='#ffd54a';ctx.lineWidth=3*u;for(let i=0;i<8;i++){ctx.rotate(Math.PI/4);ctx.beginPath();ctx.moveTo(r*1.05,0);ctx.lineTo(r*1.5,0);ctx.stroke()}ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(0,0,r*.9,0,7);ctx.fill()}
-else if(it.k==='clock'){ctx.fillStyle='#0b2a3a';ctx.strokeStyle='#7be3ff';ctx.lineWidth=3.5*u;ctx.beginPath();ctx.arc(0,0,r*1.15,0,7);ctx.fill();ctx.stroke();ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,-r*.7);ctx.lineTo(0,0);ctx.lineTo(r*.5,r*.3);ctx.stroke();ctx.beginPath();ctx.moveTo(-r*.35,-r*1.35);ctx.lineTo(r*.35,-r*1.35);ctx.stroke()}
+else if(it.k==='clock'){ctx.strokeStyle='rgba(123,227,255,.4)';ctx.lineWidth=2*u;ctx.beginPath();ctx.arc(0,0,r*1.7+Math.sin(tt*6)*2*u,0,7);ctx.stroke();ctx.fillStyle='#0b2a3a';ctx.strokeStyle='#7be3ff';ctx.lineWidth=3.5*u;ctx.beginPath();ctx.arc(0,0,r*1.15,0,7);ctx.fill();ctx.stroke();ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,-r*.7);ctx.lineTo(0,0);ctx.lineTo(r*.5,r*.3);ctx.stroke();ctx.beginPath();ctx.moveTo(-r*.35,-r*1.35);ctx.lineTo(r*.35,-r*1.35);ctx.stroke()}
 else{ctx.rotate(it.a);ctx.fillStyle='#8b2f4b';ctx.beginPath();for(let i=0;i<14;i++){const rr=i%2?r*.55:r*1.15,a=i*Math.PI/7;ctx.lineTo(Math.cos(a)*rr,Math.sin(a)*rr)}ctx.closePath();ctx.fill()}
 ctx.restore()}
 function draw(){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);ctx.save();if(shake>0)ctx.translate((Math.random()-.5)*8*u,(Math.random()-.5)*8*u);
