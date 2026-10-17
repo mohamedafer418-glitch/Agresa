@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <title>AGRESA — Grow Your Roots</title>
 <meta name="theme-color" content="#06210f"><meta name="apple-mobile-web-app-title" content="AGRESA">
-<link rel="icon" type="image/png" sizes="512x512" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="512x512" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#e6c36a;--cream:#f3f0dd}
@@ -153,5 +153,6 @@ ctx.fillStyle='rgba(246,224,138,.35)';for(const p of pol){p.y-=p.v*.016;if(p.y<0
 ctx.fillStyle='#041208';ctx.fillRect(0,potY+48*u,W,H);ctx.fillStyle='#e6c36a';ctx.fillRect(0,potY+48*u,W,2*u);
 plant();pot();items.forEach(item);ctx.font='900 '+(20*u)+'px Nunito,sans-serif';ctx.textAlign='center';pops.forEach(p=>{ctx.globalAlpha=Math.min(1,p.l*2);ctx.fillStyle=p.c;ctx.fillText(p.t,p.x,p.y)});ctx.globalAlpha=1;ctx.restore()}
 function loop(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;if(st==='play')update(dt);else tt+=dt;draw();requestAnimationFrame(loop)}
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 hearts();home();requestAnimationFrame(loop);
 </script></body></html>
