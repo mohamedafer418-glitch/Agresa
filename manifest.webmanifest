@@ -1,24 +1,15 @@
 {
- "name": "AGRESA \u2014 Grow Your Roots",
- "short_name": "AGRESA",
+ "name": "AGRESA 10 — Roots of a Decade",
+ "short_name": "AGRESA 10",
+ "lang": "ar",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
  "orientation": "portrait",
- "background_color": "#06210f",
- "theme_color": "#06210f",
+ "background_color": "#07170d",
+ "theme_color": "#07170d",
  "icons": [
-  {
-   "src": "icon-192.png",
-   "sizes": "192x192",
-   "type": "image/png",
-   "purpose": "any"
-  },
-  {
-   "src": "icon-512.png",
-   "sizes": "512x512",
-   "type": "image/png",
-   "purpose": "any maskable"
-  }
+  {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+  {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
  ]
 }
