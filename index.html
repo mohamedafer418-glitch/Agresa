@@ -25,12 +25,12 @@ canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
 .scr{position:absolute;inset:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:11px;padding:22px 26px;text-align:center;background:rgba(3,12,6,.7);backdrop-filter:blur(3px)}
 .hide{display:none!important}
 .lang{display:flex;gap:6px}.lang button{font:800 12px Cairo,sans-serif;color:var(--c);background:#ffffff14;border:1px solid #ffffff30;border-radius:20px;padding:4px 12px}.lang button.on{background:var(--g);color:#06210f}
-.logo{width:210px;height:auto;border-radius:22px;border:1px solid rgba(230,195,106,.5);box-shadow:0 0 34px rgba(62,224,138,.35)}
-.ten{position:relative;width:100px;height:100px;display:grid;place-items:center}
+.logo{width:132px;height:auto;filter:brightness(0) invert(.94) sepia(.25) drop-shadow(0 0 14px rgba(62,224,138,.7))}
+.ten{position:relative;width:128px;height:128px;display:grid;place-items:center}
 .ten i{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(230,195,106,.55);animation:rg 4s ease-out infinite}
 .ten i:nth-child(2){animation-delay:1.3s}.ten i:nth-child(3){animation-delay:2.6s}
 @keyframes rg{from{transform:scale(.3);opacity:1}to{transform:scale(1.3);opacity:0}}
-.ten b{font:900 60px/1 Fraunces,serif;background:linear-gradient(#fff3c4,#e6c36a 55%,#9c7a24);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #e6c36a66)}
+.ten b{font:900 76px/1 Fraunces,serif;background:linear-gradient(#fff3c4,#e6c36a 55%,#9c7a24);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #e6c36a66)}
 .sub{letter-spacing:3px;font-weight:800;font-size:13px;color:var(--g)}
 h1{font-weight:900;font-size:34px;line-height:1.2}
 .how{font-size:14px;color:#b4cdbc;max-width:32ch;line-height:1.7}
@@ -41,7 +41,7 @@ h1{font-weight:900;font-size:34px;line-height:1.2}
 .big{font:900 46px Cairo,sans-serif;color:var(--g);line-height:1.1}
 .note{font-weight:700;font-size:14px;border:2px dashed var(--g);border-radius:14px;padding:8px 14px;line-height:1.6;max-width:320px}
 input{font:800 18px Cairo,sans-serif;width:100%;max-width:280px;padding:10px 16px;border-radius:14px;border:2px solid var(--g);background:#ffffff18;color:var(--c);text-align:center}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;width:100%;max-width:300px}
+.scr>*{flex-shrink:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:330px}
 .stats div{background:#ffffff14;border-radius:12px;padding:6px;font-size:11px;letter-spacing:1px;color:#a9c4b2;font-weight:800}
 .stats b{display:block;font-size:24px;color:var(--g);letter-spacing:0}
 #me{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}#who{font-weight:900;font-size:17px}
@@ -66,9 +66,10 @@ input{font:800 18px Cairo,sans-serif;width:100%;max-width:280px;padding:10px 16p
 <div class="ten"><i></i><i></i><i></i><b>10</b></div>
 <canvas id="strip" width="660" height="100"></canvas><div class="sub" data-i="sub"></div><h1 data-i="t"></h1>
 <p class="how" id="how" data-i="how"></p>
-<div id="me" class="hide"><div id="who"></div><div class="stats" id="s1"></div><button class="link" id="switch" type="button" data-i="sw"></button></div>
+
 <div class="row"><button class="gc" id="g1" type="button"><b data-i="g1"></b><small data-i="g1d"></small></button><button class="gc" id="g2" type="button"><b data-i="g2"></b><small data-i="g2d"></small></button><button class="gc" id="g3" type="button"><b data-i="g3"></b><small data-i="g3d"></small></button><button class="gc" id="g4" type="button"><b data-i="g4"></b><small data-i="g4d"></small></button></div>
 <button class="btn alt" id="lb" type="button" data-i="lb"></button>
+<div id="me" class="hide"><div id="who"></div><div class="stats" id="s1"></div><button class="link" id="switch" type="button" data-i="sw"></button></div>
 </div>
 
 <div class="scr hide" id="end">
