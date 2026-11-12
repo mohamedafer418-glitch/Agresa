@@ -25,12 +25,12 @@ canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
 .scr{position:absolute;inset:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:11px;padding:22px 26px;text-align:center;background:rgba(3,12,6,.7);backdrop-filter:blur(3px)}
 .hide{display:none!important}
 .lang{display:flex;gap:6px}.lang button{font:800 12px Cairo,sans-serif;color:var(--c);background:#ffffff14;border:1px solid #ffffff30;border-radius:20px;padding:4px 12px}.lang button.on{background:var(--g);color:#06210f}
-.logo{width:132px;height:auto;filter:brightness(0) invert(.94) sepia(.25) drop-shadow(0 0 14px rgba(62,224,138,.7))}
-.ten{position:relative;width:128px;height:128px;display:grid;place-items:center}
+.logo{width:210px;height:auto;border-radius:22px;border:1px solid rgba(230,195,106,.5);box-shadow:0 0 34px rgba(62,224,138,.35)}
+.ten{position:relative;width:100px;height:100px;display:grid;place-items:center}
 .ten i{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(230,195,106,.55);animation:rg 4s ease-out infinite}
 .ten i:nth-child(2){animation-delay:1.3s}.ten i:nth-child(3){animation-delay:2.6s}
 @keyframes rg{from{transform:scale(.3);opacity:1}to{transform:scale(1.3);opacity:0}}
-.ten b{font:900 76px/1 Fraunces,serif;background:linear-gradient(#fff3c4,#e6c36a 55%,#9c7a24);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #e6c36a66)}
+.ten b{font:900 60px/1 Fraunces,serif;background:linear-gradient(#fff3c4,#e6c36a 55%,#9c7a24);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #e6c36a66)}
 .sub{letter-spacing:3px;font-weight:800;font-size:13px;color:var(--g)}
 h1{font-weight:900;font-size:34px;line-height:1.2}
 .how{font-size:14px;color:#b4cdbc;max-width:32ch;line-height:1.7}
@@ -97,9 +97,9 @@ input{font:800 18px Cairo,sans-serif;width:100%;max-width:280px;padding:10px 16p
 /* Firebase: same database as before, new path (/anniv10). Make sure your rules allow read/write on it. */
 const CONFIG={db:'https://agresa-game-48c99-default-rtdb.europe-west1.firebasedatabase.app',path:'/anniv10'};
 const D={
-ar:{sub:'أڨريسا · 2017 — 2027',t:'عشر سنوات من النمو',how:'أربع ألعاب وعشر سنوات: انزل بالجذر، ادمج النباتات، اروِ الحقل، واحصد الموسم.',g1:'الجذور',g1d:'انزل عبر طبقات السنين',g2:'الحديقة',g2d:'ادمج النباتات حتى تُزهر',mh:'اسحب لدمج النباتات المتشابهة',g3:'قناة الري',g3d:'وجّه الماء إلى النبتة',g4:'الحصاد',g4d:'اقطف الناضج فقط',h3:'المس الأنبوب لتدويره حتى يصل الماء إلى كل النباتات',h4:'المس الثمار الناضجة وتجنّب الأشواك والفجّة',go:'ابدأ',lb:'المتصدّرون',sc:'النقاط',bs:'الأفضل',nm:'اختر اسمك',ph:'اسمك',cont:'متابعة',back:'رجوع',wb:'أهلاً بعودتك،',sw:'لست أنت؟ بدّل اللاعب',g:'الألعاب',tt:'المجموع',by:'أفضل سنة',ag:'العب مجددًا',note:'سنعلن اسم صاحب المركز الأول على صفحتنا، تابعونا!',fol:'تابع @agresaclub',ts:['بذرة','جذر','شجيرة','أڨريسا 10'],msg:'وصلتَ إلى سنة {y} بـ {s} نقطة!',win:'وصلتَ إلى 2027 وأزهرت الشجرة! {s} نقطة',nb:' رقم شخصي جديد!',sh:'مشاركة',shx:'وصلتُ إلى سنة {y} وجمعتُ {s} نقطة في لعبة أڨريسا 10 سنوات! هل تتفوّق عليّ؟',e1:'الاسم حرفان على الأقل.',e2:'هذا الاسم مأخوذ، جرّب غيره.',e3:'تعذّر الاتصال بالخادم، حاول مجددًا.',ld:'جارٍ التحميل…',no:'لا نتائج بعد، كن الأول!',cf:'تبديل اللاعب؟ ستُمسح إحصائياتك على هذا الهاتف.'},
-fr:{sub:'AGRESA · 2017 — 2027',t:'Dix ans de croissance',how:'Quatre jeux, dix années : descends avec la racine, fusionne les plantes, irrigue le champ et récolte la saison.',g1:'Racines',g1d:'Descends dans les couches',g2:'Jardin',g2d:'Fusionne jusqu’à la fleur',mh:'Glisse pour fusionner les plantes identiques',g3:'Irrigation',g3d:'Guide l’eau aux plantes',g4:'Récolte',g4d:'Cueille seulement le mûr',h3:'Touche un tuyau pour le tourner et relie toutes les plantes',h4:'Touche les fruits mûrs, évite les épines et le vert',go:'Jouer',lb:'Classement',sc:'SCORE',bs:'RECORD',nm:'CHOISIS TON NOM',ph:'Ton nom',cont:'Continuer',back:'Retour',wb:'Bon retour,',sw:'Pas toi ? Changer de joueur',g:'PARTIES',tt:'TOTAL',by:'MEILLEURE ANNÉE',ag:'Rejouer',note:'Le nom du meilleur joueur sera annoncé sur notre page, suivez-nous !',fol:'Suivre @agresaclub',ts:['Graine','Racine','Arbuste','AGRESA 10'],msg:'Tu as atteint {y} avec {s} points !',win:'Tu as atteint 2027, l’arbre a fleuri ! {s} points',nb:' Nouveau record !',sh:'Partager',shx:'J’ai atteint {y} avec {s} points au jeu AGRESA 10 ans ! Tu fais mieux ?',e1:'Le nom doit faire 2 caractères minimum.',e2:'Ce nom est pris, essaie-en un autre.',e3:'Serveur injoignable, réessaie.',ld:'Chargement…',no:'Aucun score, sois le premier !',cf:'Changer de joueur ? Les stats locales seront effacées.'},
-en:{sub:'AGRESA · 2017 — 2027',t:'A Decade of Growth',how:'Four games, ten years: dive with the root, merge plants, irrigate the field and harvest the season.',g1:'Roots',g1d:'Dive through the years',g2:'Garden',g2d:'Merge until it blooms',mh:'Swipe to merge matching plants',g3:'Irrigation',g3d:'Guide the water',g4:'Harvest',g4d:'Pick only the ripe',h3:'Tap pipes to rotate them until water reaches every plant',h4:'Tap ripe fruit; avoid thorns and unripe ones',go:'Start',lb:'Leaderboard',sc:'SCORE',bs:'BEST',nm:'CHOOSE YOUR NAME',ph:'Your name',cont:'Continue',back:'Back',wb:'Welcome back,',sw:'Not you? Switch player',g:'GAMES',tt:'TOTAL',by:'BEST YEAR',ag:'Play again',note:'We’ll announce the top player on our page, follow us!',fol:'Follow @agresaclub',ts:['Seed','Root','Sapling','AGRESA 10'],msg:'You reached {y} with {s} points!',win:'You reached 2027 and the tree bloomed! {s} points',nb:' New personal best!',sh:'Share',shx:'I reached {y} and scored {s} in the AGRESA 10-year game! Can you beat me?',e1:'Name must be at least 2 characters.',e2:'That name is taken. Try another.',e3:'Can’t reach the server. Try again.',ld:'Loading…',no:'No scores yet. Be the first!',cf:'Switch player? Local stats will be cleared.'}};
+ar:{sub:'أڨريسا · 2017 — 2027',t:'عشر سنوات من النمو',how:'أربع ألعاب وعشر سنوات: انزل بالجذر، ادمج النباتات، اروِ الحقل، واحصد الموسم.',g1:'الجذور',g1d:'انزل عبر طبقات السنين',g2:'الحديقة',g2d:'أسقط وادمج حتى تُزهر',mh:'اسحب للتصويب وارفع إصبعك للإسقاط، والمتشابهتان تندمجان',g3:'قناة الري',g3d:'وجّه الماء إلى النبتة',g4:'الحصاد',g4d:'اقطف الناضج فقط',h3:'المس الأنبوب لتدويره حتى يصل الماء إلى كل النباتات',h4:'المس الثمار الناضجة وتجنّب الأشواك والفجّة',go:'ابدأ',lb:'المتصدّرون',sc:'النقاط',bs:'الأفضل',nm:'اختر اسمك',ph:'اسمك',cont:'متابعة',back:'رجوع',wb:'أهلاً بعودتك،',sw:'لست أنت؟ بدّل اللاعب',g:'الألعاب',tt:'المجموع',by:'أفضل سنة',ag:'العب مجددًا',note:'سنعلن اسم صاحب المركز الأول على صفحتنا، تابعونا!',fol:'تابع @agresaclub',ts:['بذرة','جذر','شجيرة','أڨريسا 10'],msg:'وصلتَ إلى سنة {y} بـ {s} نقطة!',win:'وصلتَ إلى 2027 وأزهرت الشجرة! {s} نقطة',nb:' رقم شخصي جديد!',sh:'مشاركة',shx:'وصلتُ إلى سنة {y} وجمعتُ {s} نقطة في لعبة أڨريسا 10 سنوات! هل تتفوّق عليّ؟',e1:'الاسم حرفان على الأقل.',e2:'هذا الاسم مأخوذ، جرّب غيره.',e3:'تعذّر الاتصال بالخادم، حاول مجددًا.',ld:'جارٍ التحميل…',no:'لا نتائج بعد، كن الأول!',cf:'تبديل اللاعب؟ ستُمسح إحصائياتك على هذا الهاتف.'},
+fr:{sub:'AGRESA · 2017 — 2027',t:'Dix ans de croissance',how:'Quatre jeux, dix années : descends avec la racine, fusionne les plantes, irrigue le champ et récolte la saison.',g1:'Racines',g1d:'Descends dans les couches',g2:'Jardin',g2d:'Lâche et fusionne',mh:'Glisse pour viser, relâche pour lâcher. Les identiques fusionnent',g3:'Irrigation',g3d:'Guide l’eau aux plantes',g4:'Récolte',g4d:'Cueille seulement le mûr',h3:'Touche un tuyau pour le tourner et relie toutes les plantes',h4:'Touche les fruits mûrs, évite les épines et le vert',go:'Jouer',lb:'Classement',sc:'SCORE',bs:'RECORD',nm:'CHOISIS TON NOM',ph:'Ton nom',cont:'Continuer',back:'Retour',wb:'Bon retour,',sw:'Pas toi ? Changer de joueur',g:'PARTIES',tt:'TOTAL',by:'MEILLEURE ANNÉE',ag:'Rejouer',note:'Le nom du meilleur joueur sera annoncé sur notre page, suivez-nous !',fol:'Suivre @agresaclub',ts:['Graine','Racine','Arbuste','AGRESA 10'],msg:'Tu as atteint {y} avec {s} points !',win:'Tu as atteint 2027, l’arbre a fleuri ! {s} points',nb:' Nouveau record !',sh:'Partager',shx:'J’ai atteint {y} avec {s} points au jeu AGRESA 10 ans ! Tu fais mieux ?',e1:'Le nom doit faire 2 caractères minimum.',e2:'Ce nom est pris, essaie-en un autre.',e3:'Serveur injoignable, réessaie.',ld:'Chargement…',no:'Aucun score, sois le premier !',cf:'Changer de joueur ? Les stats locales seront effacées.'},
+en:{sub:'AGRESA · 2017 — 2027',t:'A Decade of Growth',how:'Four games, ten years: dive with the root, merge plants, irrigate the field and harvest the season.',g1:'Roots',g1d:'Dive through the years',g2:'Garden',g2d:'Drop and merge',mh:'Drag to aim, release to drop. Matching plants merge',g3:'Irrigation',g3d:'Guide the water',g4:'Harvest',g4d:'Pick only the ripe',h3:'Tap pipes to rotate them until water reaches every plant',h4:'Tap ripe fruit; avoid thorns and unripe ones',go:'Start',lb:'Leaderboard',sc:'SCORE',bs:'BEST',nm:'CHOOSE YOUR NAME',ph:'Your name',cont:'Continue',back:'Back',wb:'Welcome back,',sw:'Not you? Switch player',g:'GAMES',tt:'TOTAL',by:'BEST YEAR',ag:'Play again',note:'We’ll announce the top player on our page, follow us!',fol:'Follow @agresaclub',ts:['Seed','Root','Sapling','AGRESA 10'],msg:'You reached {y} with {s} points!',win:'You reached 2027 and the tree bloomed! {s} points',nb:' New personal best!',sh:'Share',shx:'I reached {y} and scored {s} in the AGRESA 10-year game! Can you beat me?',e1:'Name must be at least 2 characters.',e2:'That name is taken. Try another.',e3:'Can’t reach the server. Try again.',ld:'Loading…',no:'No scores yet. Be the first!',cf:'Switch player? Local stats will be cleared.'}};
 const $=id=>document.getElementById(id),app=$('app'),cv=$('cv'),ctx=cv.getContext('2d');
 const ls={g:k=>{try{return localStorage.getItem(k)}catch(e){return null}},s:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},r:k=>{try{localStorage.removeItem(k)}catch(e){}}};
 let lang=ls.g('ag10-lang')||(navigator.language||'ar').slice(0,2);if(!D[lang])lang='ar';
@@ -117,18 +117,18 @@ function stats(el){el.textContent='';[['g1',prof.best],['g2',prof.b2],['g3',prof
 function paint(){if(prof){$('who').textContent=T('wb')+' '+prof.name;stats($('s1'))}}
 function setLang(l){lang=l;ls.s('ag10-lang',l);const h=document.documentElement;h.lang=l;h.dir=l==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T(e.dataset.i));$('nm').placeholder=T('ph');document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l));paint()}
 function hud(){$('S').textContent=score;$('Y').textContent=2017+yr;$('B').textContent=prof?prof[cur===1?'best':'b'+cur]||0:0;[...$('yt').children].forEach((s,i)=>s.classList.toggle('on',i<yr))}
-function banner(){$('bn').textContent=2017+yr;$('bn2').textContent=yr+' / 10';const b=$('banner');b.classList.remove('show');void b.offsetWidth;b.classList.add('show')}
+function banner(){$('bn').textContent=2017+yr;$('bn2').textContent=yr<=10?yr+' / 10':'+'+(yr-10);const b=$('banner');b.classList.remove('show');void b.offsetWidth;b.classList.add('show')}
 function start(){cur=1;$('hud').classList.remove('nw');score=0;water=100;yr=0;slow=0;depth=0;nextS=H*.6;items=[];parts=[];trail=[];won=0;px=tx=W/2;st='play';show('');$('hud').classList.remove('hide');$('wi').style.width='100%';hud();banner()}
 const burst=(x,y,c,n=10)=>{for(let i=0;i<n;i++){const a=Math.random()*6.3,s=(40+Math.random()*120)*u;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:.5+Math.random()*.5,c,s:(2+Math.random()*2.5)*u})}};
-function upd(dt,demo){t+=dt;
+function upd(dt,demo){t+=dt;const yy=Math.min(yr,12);
 if(demo){spd=120*u;tx=W/2+Math.sin(t*.9)*W*.3;if(depth>yL*2){depth=0;items=[];trail=[];nextS=0}}
-else{spd=(150+yr*14)*u*(slow>0?.55:1);slow=Math.max(0,slow-dt);water-=dt*(4.6+yr*.4)}
+else{spd=(150+yy*14)*u*(slow>0?.55:1);slow=Math.max(0,slow-dt);water-=dt*(4.6+yy*.4)}
 depth+=spd*dt;px+=(tx-px)*Math.min(1,dt*10);px=Math.max(14*u,Math.min(W-14*u,px));
 const l=trail[trail.length-1];if(!l||depth-l.y>5*u)trail.push({x:px,y:depth,n:nid++});
 while(trail.length&&trail[0].y<depth-tipY-30*u)trail.shift();
-while(nextS<depth+H-tipY+60*u){const r=Math.random(),rk=.22+yr*.03,k=r<rk?'rock':r<rk+(yr>1?.1:0)?'salt':r<rk+.2?'min':'drop';
-items.push({k,s:Math.random()*100,x:24*u+Math.random()*(W-48*u),y:nextS,r:(k==='rock'?14+Math.random()*14:11)*u,a:Math.random()*6,m:k==='salt'?(Math.random()<.5?-1:1)*(28+yr*4)*u:0});
-nextS+=Math.max(46*u,(108-yr*5)*u*(.6+Math.random()*.8))}
+while(nextS<depth+H-tipY+60*u){const r=Math.random(),rk=.22+yy*.03,k=r<rk?'rock':r<rk+(yr>1?.1:0)?'salt':r<rk+.2?'min':'drop';
+items.push({k,s:Math.random()*100,x:24*u+Math.random()*(W-48*u),y:nextS,r:(k==='rock'?14+Math.random()*14:11)*u,a:Math.random()*6,m:k==='salt'?(Math.random()<.5?-1:1)*(28+yy*4)*u:0});
+nextS+=Math.max(46*u,(108-yy*5)*u*(.6+Math.random()*.8))}
 for(const i of items){if(i.m){i.x+=i.m*dt;if(i.x<20*u||i.x>W-20*u)i.m=-i.m}i.a+=dt*2;
 if(demo||i.d)continue;const dx=i.x-px,dy=i.y-depth;
 if(dx*dx+dy*dy<(i.r+9*u)**2){i.d=1;const sy=i.y-depth+tipY;
@@ -137,12 +137,12 @@ else if(i.k==='min'){score+=5;water=Math.min(100,water+3);burst(i.x,sy,'#ffd54a'
 else{water-=i.k==='salt'?28:20;slow=.8;shake=.35;burst(i.x,sy,i.k==='salt'?'#ff7ab0':'#b08a66',14);beep(110,.18,'sawtooth',.08);navigator.vibrate&&navigator.vibrate(40)}hud()}}
 items=items.filter(i=>!i.d&&i.y>depth-tipY-80*u);
 parts.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.l-=dt});parts=parts.filter(p=>p.l>0);shake=Math.max(0,shake-dt);
-if(!demo){const ny=Math.min(10,Math.floor(depth/yL));if(ny>yr){yr=ny;score+=20;banner();burst(px,tipY,'#e6c36a',30);beep(880,.25,'triangle');hud()}
+if(!demo){const ny=Math.floor(depth/yL);if(ny>yr){yr=ny;score+=20;banner();burst(px,tipY,'#e6c36a',30);beep(880,.25,'triangle');hud()}
 $('wi').style.width=Math.max(0,water)+'%';$('wbar').classList.toggle('low',water<25);
-if(yr>=10)finish(1);else if(water<=0)finish(0)}}
+if(water<=0)finish(0)}}
 function finish(w){if(st!=='play')return;st='end';won=w;if(w)score+=cur===1?Math.round(water):cur<4?300:0;$('hud').classList.add('hide');
-const kk=cur===1?'best':'b'+cur,nb=score>(prof[kk]||0);prof.games++;prof.total+=score;prof.yr=Math.max(prof.yr,yr);if(nb)prof[kk]=scorels.s('agresa10-profile',JSON.stringify(prof));
-$('tier').textContent=T('ts')[w?3:yr<3?0:yr<6?1:2];$('msg').textContent=(w?T('win'):T('msg')).replace('{y}',2017+yr).replace('{s}',score)+(nb?T('nb'):'');stats($('s2'));const pc=$('pc').getContext('2d');pc.clearRect(0,0,300,300);plantIcon(pc,150,130,230,Math.min(10,yr),0);show('end');push()}
+const kk=cur===1?'best':'b'+cur,nb=score>(prof[kk]||0);prof.games++;prof.total+=score;prof.yr=Math.max(prof.yr,yr);if(nb)prof[kk]=score;ls.s('agresa10-profile',JSON.stringify(prof));
+const ww=w||yr>=10;won=ww?1:0;$('tier').textContent=T('ts')[ww?3:yr<3?0:yr<6?1:2];$('msg').textContent=(ww?T('win'):T('msg')).replace('{y}',2017+yr).replace('{s}',score)+(nb?T('nb'):'');stats($('s2'));const pc=$('pc').getContext('2d');pc.clearRect(0,0,300,300);plantIcon(pc,150,130,230,Math.min(10,yr),0);show('end');push()}
 function item(i){const sy=i.y-depth+tipY;if(sy<-50||sy>H+50)return;ctx.save();ctx.translate(i.x,sy);const r=i.r;
 if(i.k==='drop'){ctx.shadowColor='#5ac8fa';ctx.shadowBlur=12*u;ctx.fillStyle='#5ac8fa';ctx.beginPath();ctx.moveTo(0,-r*1.5);ctx.quadraticCurveTo(r*1.1,0,0,r);ctx.quadraticCurveTo(-r*1.1,0,0,-r*1.5);ctx.fill()}
 else if(i.k==='min'){ctx.rotate(Math.sin(i.a)*.4);ctx.shadowColor='#ffd54a';ctx.shadowBlur=14*u;ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.moveTo(0,-r*1.3);ctx.lineTo(r,0);ctx.lineTo(0,r*1.3);ctx.lineTo(-r,0);ctx.closePath();ctx.fill();ctx.fillStyle='rgba(255,255,255,.55)';ctx.beginPath();ctx.moveTo(0,-r*1.3);ctx.lineTo(r,0);ctx.lineTo(0,0);ctx.closePath();ctx.fill()}
@@ -154,7 +154,7 @@ const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,`hsl(${hh},38%,${13-f
 ctx.save();if(shake>0)ctx.translate((Math.random()-.5)*9*u,(Math.random()-.5)*9*u);
 const gs=64*u,r0=Math.floor((depth-tipY)/gs);
 for(let r=r0;r<r0+H/gs+2;r++)for(let c=0;c<7;c++){const h=Math.sin(r*12.9898+c*78.233)*43758.5453,q=h-Math.floor(h);if(q<.6){ctx.fillStyle=`rgba(255,240,200,${.04+q*.08})`;ctx.beginPath();ctx.arc((c+((q*9)%1))*W/6,r*gs+((q*7)%1)*gs-depth+tipY,(1+q*4)*u,0,7);ctx.fill()}}
-if(play)for(let k=0;k<=10;k++){const sy=k*yL-depth+tipY;if(sy<-40||sy>H+40)continue;ctx.globalAlpha=k<=yr?.9:.5;ctx.strokeStyle=ctx.fillStyle='#e6c36a';ctx.lineWidth=1.5*u;ctx.setLineDash([6*u,8*u]);ctx.beginPath();ctx.moveTo(0,sy);ctx.lineTo(W,sy);ctx.stroke();ctx.setLineDash([]);ctx.font=`900 ${(k===10?30:22)*u}px Fraunces,serif`;ctx.textAlign='right';ctx.fillText(2017+k,W-12*u,sy-8*u);plantIcon(ctx,40*u,sy-17.3*u,54*u,k,t);ctx.globalAlpha=1}
+if(play){const k0=Math.max(0,Math.floor((depth-tipY)/yL)-1),k1=Math.floor((depth+H)/yL)+1;for(let k=k0;k<=k1;k++){const sy=k*yL-depth+tipY;if(sy<-40||sy>H+40)continue;ctx.globalAlpha=k<=yr?.9:.5;ctx.strokeStyle=ctx.fillStyle='#e6c36a';ctx.lineWidth=1.5*u;ctx.setLineDash([6*u,8*u]);ctx.beginPath();ctx.moveTo(0,sy);ctx.lineTo(W,sy);ctx.stroke();ctx.setLineDash([]);ctx.font=`900 ${(k===10?30:22)*u}px Fraunces,serif`;ctx.textAlign='right';ctx.fillText(2017+k,W-12*u,sy-8*u);plantIcon(ctx,40*u,sy-17.3*u,54*u,Math.min(k,10),t);ctx.globalAlpha=1}}
 ctx.fillStyle='rgba(255,236,160,.35)';for(const p of mot){p.y-=p.v*.006;if(p.y<0)p.y=1;ctx.beginPath();ctx.arc(p.x*W+Math.sin(t+p.x*9)*8,p.y*H,p.r*u,0,7);ctx.fill()}
 items.forEach(item);ctx.shadowBlur=0;
 const n=trail.length;ctx.lineCap='round';ctx.shadowColor='#3ee08a';ctx.shadowBlur=14*u;
@@ -189,8 +189,8 @@ $('sh').onclick=async()=>{const x=T('shx').replace('{y}',2017+yr).replace('{s}',
 document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 $('nm').addEventListener('keydown',e=>{if(e.key==='Enter')reg()});
 const setX=e=>{const r=cv.getBoundingClientRect();tx=e.clientX-r.left};
-cv.addEventListener('pointerdown',setX);cv.addEventListener('pointermove',setX);cv.addEventListener('pointerdown',e=>{if(st!=='play'||cur<3)return;const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;cur===3?tapP(x,y):tapH(x,y)});cv.addEventListener('pointerdown',e=>{swx=e.clientX;swy=e.clientY});cv.addEventListener('pointerup',e=>{if(st!=='play'||cur!==2)return;const dx=e.clientX-swx,dy=e.clientY-swy;if(Math.max(Math.abs(dx),Math.abs(dy))<24)return;swipe(Math.abs(dx)>Math.abs(dy)?(dx>0?1:0):(dy>0?3:2))});
-addEventListener('keydown',e=>{if(st!=='play')return;if(cur===2){const d=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].indexOf(e.key);if(d>=0){e.preventDefault();swipe(d)}return}if(e.key==='ArrowLeft')tx-=60*u;if(e.key==='ArrowRight')tx+=60*u;tx=Math.max(14*u,Math.min(W-14*u,tx))});
+cv.addEventListener('pointerdown',setX);cv.addEventListener('pointermove',setX);cv.addEventListener('pointerdown',e=>{if(st!=='play'||cur<3)return;const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;cur===3?tapP(x,y):tapH(x,y)});cv.addEventListener('pointerdown',e=>{swx=e.clientX;swy=e.clientY});cv.addEventListener('pointerup',e=>{if(st==='play'&&cur===2)mDrop()});
+addEventListener('keydown',e=>{if(st!=='play')return;if(cur===2){if(e.key==='ArrowLeft')tx-=20*u;if(e.key==='ArrowRight')tx+=20*u;if(e.key===' '||e.key==='ArrowDown'){e.preventDefault();mDrop()}return}if(e.key==='ArrowLeft')tx-=60*u;if(e.key==='ArrowRight')tx+=60*u;tx=Math.max(14*u,Math.min(W-14*u,tx))});
 function leaf(c,x,y,a,L,col){c.save();c.translate(x,y);c.rotate(a);c.fillStyle=col;c.beginPath();c.moveTo(0,0);c.quadraticCurveTo(L*.5,-L*.45,L,0);c.quadraticCurveTo(L*.5,L*.45,0,0);c.fill();c.restore()}
 function plantIcon(c,cx,cy,s,lv,t){const b=cy+s*.32,G1='#3ee08a',G2='#2fa860';c.save();c.lineCap='round';
 c.fillStyle='#5a3d27';c.beginPath();c.ellipse(cx,b,s*.3,s*.07,0,0,7);c.fill();
@@ -208,26 +208,35 @@ if(lv===10){c.fillStyle='#fff3c4';for(let i=0;i<5;i++){const a=t*1.5+i*1.3;c.glo
 c.restore()}
 function drawStrip(){const c=$('strip').getContext('2d');c.clearRect(0,0,660,100);for(let i=0;i<11;i++)plantIcon(c,30+i*60,50,56,i,0)}
 const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()};
-function mStart(){cur=2;$('hud').classList.add('nw');G=Array(16).fill(0);P=Array(16).fill(0);score=0;yr=0;mwin=0;mover=0;won=0;st='play';show('');$('hud').classList.remove('hide');spawn();spawn();hud()}
-function spawn(){const e=[];G.forEach((v,i)=>{if(!v)e.push(i)});if(!e.length)return;const i=e[Math.random()*e.length|0];G[i]=Math.random()<.85?1:2;P[i]=1}
-function swipe(d){if(mwin||mover||st!=='play')return;let moved=0;
-for(let a=0;a<4;a++){const idx=[0,1,2,3].map(b=>d<2?a*4+b:b*4+a);if(d%2)idx.reverse();const v=idx.map(i=>G[i]).filter(Boolean),o=[],mg=[];
-for(let k=0;k<v.length;k++){if(v[k]===v[k+1]){const n=v[k]+1;o.push(n);mg.push(1);score+=2**n;yr=Math.max(yr,n-1);if(n>=11)mwin=1;k++}else{o.push(v[k]);mg.push(0)}}
-while(o.length<4){o.push(0);mg.push(0)}
-idx.forEach((i,j)=>{if(G[i]!==o[j])moved=1;G[i]=o[j];if(mg[j])P[i]=1})}
-if(!moved)return;beep(420+yr*60,.1,'triangle');spawn();hud();
-if(mwin)setTimeout(()=>finish(1),900);else if(!G.some((v,i)=>!v||(i%4<3&&G[i+1]===v)||(i<12&&G[i+4]===v))){mover=1;setTimeout(()=>finish(0),600)}}
-function updM(dt){t+=dt;P=P.map(p=>Math.max(0,p-dt*3))}
+let mB=[],mNext=0,mCur=0,mCd=0,mDang=0;
+const mR=l=>(13+l*5.6)*u,mRnd=()=>[0,0,0,1,1,2,3][Math.random()*7|0],mCol=l=>`hsl(${35+l*9},40%,${20+l}%)`;
+const mGeo=()=>{const cw=Math.min(W-24*u,340*u);return{xl:(W-cw)/2,xr:(W+cw)/2,yt:H*.24,yb:H-84*u}};
+function mStart(){cur=2;$('hud').classList.add('nw');mB=[];mCur=mRnd();mNext=mRnd();mCd=0;mDang=0;score=0;yr=0;won=0;parts=[];tx=W/2;st='play';show('');$('hud').classList.remove('hide');hud()}
+function mDrop(){if(mCd>0||st!=='play')return;const{xl,xr,yt}=mGeo(),r=mR(mCur),x=Math.max(xl+r,Math.min(xr-r,tx));mB.push({x,y:yt-r-4*u,vx:0,vy:0,l:mCur,r,a:0});mCur=mNext;mNext=mRnd();mCd=.5;beep(240,.05,'sine',.04)}
+function updM(dt){t+=dt;partsUp(dt);mCd=Math.max(0,mCd-dt);const{xl,xr,yt,yb}=mGeo(),n=4,h=dt/n;mB.forEach(b=>b.a+=dt);
+for(let s=0;s<n;s++){const add=[];
+for(const b of mB){b.vy+=1100*u*h;b.x+=b.vx*h;b.y+=b.vy*h;b.vx*=.996;
+if(b.x<xl+b.r){b.x=xl+b.r;b.vx*=-.2}if(b.x>xr-b.r){b.x=xr-b.r;b.vx*=-.2}
+if(b.y>yb-b.r){b.y=yb-b.r;b.vy*=-.1;b.vx*=.96}}
+for(let i=0;i<mB.length;i++)for(let j=i+1;j<mB.length;j++){const a=mB[i],b=mB[j];if(a.dead||b.dead)continue;
+const dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||.01,ov=a.r+b.r-d;if(ov<=0)continue;
+if(a.l===b.l){a.dead=b.dead=1;const L=a.l+1,mx=(a.x+b.x)/2,my=(a.y+b.y)/2;score+=a.l>=10?500:L*(L+1)*2;burst(mx,my,'#ffd54a',12);beep(300+L*70,.12,'triangle');
+if(a.l<10){add.push({x:mx,y:my,vx:(a.vx+b.vx)/2,vy:(a.vy+b.vy)/4,l:L,r:mR(L),a:1});if(L>yr){yr=L;if(L===10){banner();burst(W/2,H*.4,'#ff9ec4',40)}}}else burst(mx,my,'#ff9ec4',30);
+hud();continue}
+const nx=dx/d,ny=dy/d,ma=a.r*a.r,mb=b.r*b.r,tt=ma+mb;a.x-=nx*ov*mb/tt;a.y-=ny*ov*mb/tt;b.x+=nx*ov*ma/tt;b.y+=ny*ov*ma/tt;
+const vn=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;if(vn<0){const k=-1.1*vn/(1/ma+1/mb);a.vx-=k*nx/ma;a.vy-=k*ny/ma;b.vx+=k*nx/mb;b.vy+=k*ny/mb}}
+mB=mB.filter(b=>!b.dead).concat(add)}
+mDang=mB.some(b=>b.a>1&&b.y-b.r<yt)?mDang+dt:0;if(mDang>2.2)finish(0)}
 function drawM(){ctx.setTransform(dpr,0,0,dpr,0,0);const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#14492a');g.addColorStop(1,'#061a0e');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
 ctx.fillStyle='rgba(255,236,160,.3)';for(const p of mot){p.y-=p.v*.004;if(p.y<0)p.y=1;ctx.beginPath();ctx.arc(p.x*W+Math.sin(t+p.x*9)*8,p.y*H,p.r*u,0,7);ctx.fill()}
-const bs=Math.min(W-28*u,H*.56),x0=(W-bs)/2,y0=(H-bs)/2+34*u,c=bs/4;
-ctx.fillStyle='rgba(0,0,0,.35)';rr(x0-8*u,y0-8*u,bs+16*u,bs+16*u,18*u);ctx.fill();
-for(let i=0;i<16;i++){const x=x0+(i%4)*c,y=y0+(i/4|0)*c;ctx.fillStyle='rgba(255,255,255,.06)';rr(x+4*u,y+4*u,c-8*u,c-8*u,12*u);ctx.fill();const v=G[i];if(!v)continue;const lv=v-1,sc=1+Math.sin(P[i]*3.14)*.14,cx=x+c/2,cy=y+c/2;
-ctx.save();ctx.translate(cx,cy);ctx.scale(sc,sc);ctx.translate(-cx,-cy);
-ctx.fillStyle=`hsl(${35+lv*9},38%,${16+lv*.8}%)`;ctx.strokeStyle=`hsl(${35+lv*9},55%,40%)`;ctx.lineWidth=2*u;rr(x+4*u,y+4*u,c-8*u,c-8*u,12*u);ctx.fill();ctx.stroke();
-plantIcon(ctx,cx,cy-c*.05,c*.74,lv,t);ctx.fillStyle='rgba(243,240,221,.8)';ctx.font=`900 ${c*.14}px Fraunces,serif`;ctx.textAlign='center';ctx.fillText(2017+lv,cx,y+c-9*u);ctx.restore()}
-ctx.fillStyle='#b4cdbc';ctx.font=`700 ${13*u}px Cairo,sans-serif`;ctx.textAlign='center';ctx.fillText(T('mh'),W/2,y0+bs+34*u)}
-
+const{xl,xr,yt,yb}=mGeo();
+ctx.fillStyle='rgba(0,0,0,.32)';rr(xl-6*u,yt-12*u,xr-xl+12*u,yb-yt+18*u,16*u);ctx.fill();
+ctx.strokeStyle=mDang>0?'#ff5a6e':'rgba(230,195,106,.55)';ctx.lineWidth=2*u;ctx.setLineDash([8*u,8*u]);ctx.beginPath();ctx.moveTo(xl,yt);ctx.lineTo(xr,yt);ctx.stroke();ctx.setLineDash([]);
+for(const b of mB){ctx.fillStyle=mCol(b.l);ctx.strokeStyle=`hsl(${35+b.l*9},60%,45%)`;ctx.lineWidth=2*u;ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,7);ctx.fill();ctx.stroke();plantIcon(ctx,b.x,b.y-b.r*.1,b.r*1.6,b.l,t)}
+if(mCd<=0){const r=mR(mCur),x=Math.max(xl+r,Math.min(xr-r,tx)),y=yt-r-4*u;ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1.5*u;ctx.setLineDash([4*u,6*u]);ctx.beginPath();ctx.moveTo(x,y+r);ctx.lineTo(x,yb);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=mCol(mCur);ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();plantIcon(ctx,x,y-r*.1,r*1.6,mCur,t)}
+const nr=mR(mNext)*.7;ctx.fillStyle=mCol(mNext);ctx.beginPath();ctx.arc(xr-nr-4*u,yt-nr-14*u,nr,0,7);ctx.fill();plantIcon(ctx,xr-nr-4*u,yt-nr-14*u-nr*.1,nr*1.6,mNext,t);
+for(let l=0;l<=10;l++){ctx.globalAlpha=l<=yr?1:.4;plantIcon(ctx,(l+.5)*W/11,H-36*u,Math.min(30*u,W/11),l,t)}ctx.globalAlpha=1;
+partsDraw();hint('mh',yb+24*u)}
 const BV=[[0,-1,1],[1,0,2],[0,1,4],[-1,0,8]],PS=[3,3,4,4,4,5,5,5,6,6];
 let pLv=0,pT=0,pTot=0,pN=3,pB=[],pR=[],pA=[],pSrc=0,pLock=0,pWet=[],hP=[],hT=0,hSp=0,hCo=0;
 const rotm=(m,k)=>{for(let i=0;i<(k&3);i++)m=((m<<1)|(m>>3))&15;return m};
@@ -264,7 +273,7 @@ ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.arc(0,0,c*.1,0,7);ctx.fill();c
 const m=pB[i];
 if(i===pSrc){ctx.fillStyle='#2fa8ff';ctx.shadowColor='#5ac8fa';ctx.shadowBlur=14*u;ctx.beginPath();ctx.arc(cx,cy,c*.2,0,7);ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(cx,cy-c*.12);ctx.quadraticCurveTo(cx+c*.1,cy+c*.02,cx,cy+c*.1);ctx.quadraticCurveTo(cx-c*.1,cy+c*.02,cx,cy-c*.12);ctx.fill()}
 else if(m===1||m===2||m===4||m===8){ctx.globalAlpha=w?1:.6;plantIcon(ctx,cx,cy-c*.05,c*.72,w?6:1,t);ctx.globalAlpha=1}}
-partsDraw();hint('h3',y0+bs+34*u)}
+if(pT>35&&!pLock){const w=pB.findIndex((m,i)=>rotm(m,pR[i])!==m);if(w>=0){const x=x0+(w%n)*c,y=y0+(w/n|0)*c;ctx.strokeStyle='#ffd54a';ctx.globalAlpha=.5+.5*Math.sin(t*6);ctx.lineWidth=3*u;rr(x+3*u,y+3*u,c-6*u,c-6*u,10*u);ctx.stroke();ctx.globalAlpha=1}}partsDraw();hint('h3',y0+bs+34*u)}
 const HG=()=>{const cw=Math.min(W-28*u,H*.6*3/4),c=cw/3;return{c,x0:(W-cw)/2,y0:(H-c*4)/2+34*u}};
 function hStart(){cur=4;$('hud').classList.remove('nw');score=0;yr=0;won=0;parts=[];hP=Array(12).fill(0).map(()=>({s:0,t:0,d:0}));hT=0;hSp=.4;hCo=0;st='play';show('');$('hud').classList.remove('hide');$('wi').style.width='100%';$('wbar').classList.remove('low');hud()}
 function updH(dt){t+=dt;hT+=dt;const ny=Math.min(10,hT/5|0);if(ny>yr){yr=ny;hud();beep(880,.15,'triangle')}
